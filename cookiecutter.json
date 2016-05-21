@@ -3,5 +3,7 @@
   "solo_version": "0.0.1",
   "project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
   "year": "2016",
-  "version": "0.1.0"
+  "version": "0.0.1",
+  "author": "Author",
+  "author_email": ""
 }
