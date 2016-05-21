@@ -1,0 +1,75 @@
+---
+debug: true
+server:
+  host: 0.0.0.0
+  port: 8000
+  public_uri: "http://127.0.0.1:8000"
+
+postgresql:
+  host: 127.0.0.1
+  port: 5432
+  user: solo
+  dbname: solo
+  password: solo
+  min_connections: 1
+  max_connections: 10
+
+redis:
+  host: 127.0.0.1
+  port: 6379
+  db: 0
+  min_connections: 1
+  max_connections: 10
+
+session:
+  cookie_name: solo_sid
+  cookie_secure: False
+  cookie_httponly: False
+
+apps:
+  {{cookiecutter.repo_name}}:
+    url_prefix: /
+
+  solo.apps.accounts:
+    url_prefix: /api/users
+
+logging:
+  version: 1
+  formatters:
+    simple:
+      format: '%(asctime)s %(levelname)-5.5s [%(name)s][%(threadName)s] %(message)s'
+  handlers:
+    console:
+      class: logging.StreamHandler
+      level: DEBUG
+      formatter: simple
+      stream: ext://sys.stdout
+  loggers:
+    asyncio:
+      level: DEBUG
+      handlers: [console]
+      propagate: no
+    aiohttp:
+      level: DEBUG
+      handlers: [console]
+      propagate: no
+    aiopg:
+      level: DEBUG
+      handlers: [console]
+      propagate: no
+    sqlalchemy:
+      level: DEBUG
+      handlers: [console]
+      propagate: no
+    alembic:
+      level: INFO
+      handlers: [console]
+      propagate: no
+    solo:
+      level: DEBUG
+      handlers: [console]
+      propagate: no
+  root:
+    level: DEBUG
+    handlers: [console]
+    propagate: yes

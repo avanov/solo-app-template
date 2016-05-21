@@ -1,0 +1,1 @@
+solo=={{cookiecutter.solo_version}}
