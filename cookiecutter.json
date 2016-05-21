@@ -2,6 +2,7 @@
   "repo_name": "solo-app",
   "solo_version": "0.0.1",
   "project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
+  "project_url": "http://example.com",
   "year": "2016",
   "version": "0.0.1",
   "author": "Author",
